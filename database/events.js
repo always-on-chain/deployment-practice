@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/events');
+const mongoDB = process.env.MONGODB_URI || 'mongodb://localhost/events'
+mongoose.connect(mongoDB);
 
 const eventSchema = mongoose.Schema({
   id: {type: String, unique: true},
