@@ -1,5 +1,5 @@
 {
-  "name": "waynekwest88-mvp",
+  "name": "deployment-practice",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -32,13 +32,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/waynekwest88/mvp.git"
+    "url": "git+https://github.com/waynekwest88/deployment-practice.git"
   },
-  "keywords": [],
+  "keywords": [
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/waynekwest88/mvp/issues"
+    "url": "https://github.com/waynekwest88/deployment-practice/issues"
   },
-  "homepage": "https://github.com/waynekwest88/mvp#readme"
+  "homepage": "https://github.com/waynekwest88/deployment-practice#readme"
 }
