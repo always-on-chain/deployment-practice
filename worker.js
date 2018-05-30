@@ -1,10 +1,12 @@
 const request = require('request');
 const mongoose = require('mongoose');
-const config = require('./config.js');
+const config = require('./api.js');
 const database = require('./database/events.js');
 const Promise = require('bluebird');
 const rp = require('request-promise');
 // heroku config:set MONGOLAB_URI=mongodb://waynekwest88:michiko3@ds239930.mlab.com:39930/heroku_nbjsdbvn`
+// heroku config:set MONGOLAB_URI=mongodb://username:password@ds239930.mlab.com:39930/heroku_nbjsdbvn`
+
 
 mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds239930.mlab.com:39930/heroku_nbjsdbvn`);
 
