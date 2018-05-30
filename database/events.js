@@ -1,6 +1,9 @@
+require('dotenv').load();
+
 const mongoose = require('mongoose');
-const mongoDB = process.env.MONGODB_URI || 'mongodb://localhost/events'
-mongoose.connect(mongoDB);
+const config = require('../config.js');
+console.log('here is process', process.env.DB_USERNAME);
+mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds239930.mlab.com:39930/heroku_nbjsdbvn`);
 
 const eventSchema = mongoose.Schema({
   id: {type: String, unique: true},

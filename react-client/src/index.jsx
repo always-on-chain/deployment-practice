@@ -16,7 +16,7 @@ class App extends React.Component {
   fetch(sort) {
     $.ajax({
       method: 'GET',
-      url: `http://localhost:3000/events/${sort}`,
+      url: `/events/${sort}`,
       contentType: 'application/json',
       success: (data) => {
         this.setState({ events: data });
@@ -29,16 +29,16 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    this.fetch(this.state.button);
+    this.fetch('relevance');
     // this.fetch('meetup')
   }
 
   handleClick(sort) {
-    this.setState({button: sort}, ()=> {
-      console.log('currentState', this.state.button)
-      this.fetch(this.state.button);
-    });
-    
+    // this.setState({button: sort}, ()=> {
+    //   console.log('currentState', this.state.button)
+    //   this.fetch(this.state.button);
+    // });
+    this.fetch(sort);
   }
 
   render() {
