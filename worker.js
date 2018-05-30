@@ -5,7 +5,7 @@ const database = require('./database/events.js');
 const Promise = require('bluebird');
 const rp = require('request-promise');
 
-mongoose.connect('mongodb://localhost/events');
+mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds239930.mlab.com:39930/heroku_nbjsdbvn`);
 
 const getEventsFromEB = () => {
   let events = {

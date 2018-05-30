@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const config = require('../config.js');
 console.log('here is process', process.env.DB_USERNAME);
 mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds239930.mlab.com:39930/heroku_nbjsdbvn`);
 
