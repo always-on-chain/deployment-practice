@@ -1,5 +1,3 @@
-require('dotenv').load();
-
 const mongoose = require('mongoose');
 const config = require('../config.js');
 console.log('here is process', process.env.DB_USERNAME);
