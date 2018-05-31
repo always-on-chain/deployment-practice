@@ -1,14 +1,16 @@
 const request = require('request');
 const mongoose = require('mongoose');
-const config = require('./api.js');
+const config = require('./config.js');
 const database = require('./database/events.js');
 const Promise = require('bluebird');
 const rp = require('request-promise');
-// heroku config:set MONGOLAB_URI=mongodb://waynekwest88:michiko3@ds239930.mlab.com:39930/heroku_nbjsdbvn`
-// heroku config:set MONGOLAB_URI=mongodb://username:password@ds239930.mlab.com:39930/heroku_nbjsdbvn`
 
+const mongoDB = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds139960.mlab.com:39960/heroku_71jdfzcx`;
+mongoose.connect(mongoDB);
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds239930.mlab.com:39930/heroku_nbjsdbvn`);
+// mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds139960.mlab.com:39960/heroku_71jdfzcx`);
 
 const getEventsFromEB = () => {
   let events = {
