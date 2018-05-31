@@ -5,7 +5,7 @@ const mongoDB = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}
 mongoose.connect(mongoDB);
 
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.on('error', console.error.bind(console, 'MongoDB connection error in events.js'));
 
 const eventSchema = mongoose.Schema({
   id: {type: String, unique: true},
