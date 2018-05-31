@@ -8,7 +8,7 @@ const rp = require('request-promise');
 const mongoDB = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds139960.mlab.com:39960/heroku_71jdfzcx`;
 mongoose.connect(mongoDB);
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.on('error', console.error.bind(console, 'MongoDB connection error in worker.js'));
 
 const getEventsFromEB = () => {
   let events = {
