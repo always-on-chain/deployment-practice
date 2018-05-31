@@ -1,5 +1,3 @@
-// require('dotenv').load();
-
 
 const mongoose = require('mongoose');
 const mongoDB = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds139960.mlab.com:39960/heroku_71jdfzcx`;

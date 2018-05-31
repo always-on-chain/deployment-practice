@@ -1,6 +1,6 @@
 const request = require('request');
 const mongoose = require('mongoose');
-const config = require('./config.js');
+// const config = require('./config.js');
 const database = require('./database/events.js');
 const Promise = require('bluebird');
 const rp = require('request-promise');
@@ -15,13 +15,13 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 const getEventsFromEB = () => {
   let events = {
     url: `
-    https://www.eventbriteapi.com/v3/events/search/?token=${config.EventBrightToken}
+    https://www.eventbriteapi.com/v3/events/search/?token=${process.env.EventBrightToken}
     &location.address=${'San Francisco'}
     &q=${'blockchain'}
     `,
     headers: {
       'User-Agent': 'request',
-      'Authorization': `Bearer ${config.EventBrightToken}`
+      'Authorization': `Bearer ${process.env.EventBrightToken}`
     }
   };
 
@@ -38,10 +38,10 @@ const getEventsFromEB = () => {
         for (var i = 0; i < events.length; i++) {
           let venue = JSON.parse(events[i].venue_id);
           let location = {
-            url: `https://www.eventbriteapi.com/v3/venues/${venue}/?token=${config.EventBrightToken}`,
+            url: `https://www.eventbriteapi.com/v3/venues/${venue}/?token=${process.env.EventBrightToken}`,
             headers: {
               'User-Agent': 'request',
-              'Authorization': `Bearer ${config.EventBrightToken}`
+              'Authorization': `Bearer ${process.env.EventBrightToken}`
             }
           }
           let locationPromise = rp(location)
