@@ -1,5 +1,7 @@
 
 const mongoose = require('mongoose');
+// mongodb://DB_USERNAME:DB_PASSWORD@ds139960.mlab.com:39960/heroku_71jdfzcx
+const mongoURI = process.env.MONGO_URI
 const mongoDB = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds139960.mlab.com:39960/heroku_71jdfzcx`;
 
 mongoose.connect(mongoDB);
