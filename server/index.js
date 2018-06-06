@@ -31,7 +31,6 @@ app.get('/events/date', (req, res) => {
 
 const port = 3000;
 
-
 app.listen(process.env.PORT || port, () => {
   console.log(`listening on port ${process.env.PORT || port}`);
 })
